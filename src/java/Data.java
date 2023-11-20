@@ -44,7 +44,7 @@ public class Data extends HttpServlet
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/jaydip","root","");
                     out.println("<h1>success<h1>");
-                    out.println("<h1><a href='Fatch'>SHOW RECORD</a><h1>");
+//                    out.println("<h1><a href='Fatch'>SHOW RECORD</a><h1>");
                     
                     
                     
