@@ -13,13 +13,15 @@
         } */
 
         h1{
+            border-radius: 10px;
             background-color:bisque;
             border: 2px solid blue;
             text-align: center;
         }
         table{
-            background-color:skyblue;
-            border-spacing: 1ch;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color:#f3f0ff;
+            border-spacing: 3ch;
             border: 2px solid rgb(236, 168, 168);
             margin: auto;
         }
@@ -42,7 +44,7 @@
                 <td>
                     Name:
                 <td>
-                    <input type="text" name="uname" placeholder="Enter Name ">
+                    <input type="text" name="uname" placeholder="Enter Name " required>
                 
                 </td>
             </tr>
@@ -53,7 +55,7 @@
                     Gender :
                 </td>
                 <td>
-                    <input type="radio" name="ugender" value="male">Male &nbsp; &nbsp;
+                    <input type="radio" name="ugender" value="male" required >Male &nbsp; &nbsp;
                         <input type="radio" name="ugender" value="female"> Female
                 </td>
             </tr>
@@ -65,7 +67,7 @@
                 Mobile No:
                 </td>
                 <td>
-                    <input type="number" name="umobile" placeholder="Enter here">
+                    <input type="number" name="umobile" placeholder="Enter here" required>
                 </td>
             </tr>
             <tr>
@@ -73,7 +75,7 @@
                     Email:
                 </td>
                 <td>
-                    <input type="email" name="uemail" placeholder="Enter your Email">
+                    <input type="email" name="uemail" placeholder="Enter your Email" required>
                 </td>
             </tr>
             <tr>
@@ -81,7 +83,7 @@
                     Aadhar No:
                 </td>
                 <td>
-                    <input type="number" name="uaadhar">
+                    <input type="number" name="uaadhar" required>
                 </td>
             </tr>
             <tr>
@@ -89,7 +91,8 @@
                     Select Blood Group:
                 </td>
                 <td>
-                    <select name="ubgroup" id="">
+                    <select name="ubgroup" id="" required>
+                        <option value="" disabled selected value>Select</option>
                         <option value="a+">A+</option>
                         <option value="b+">B+</option>
                         <option value="a-">A-</option>
@@ -104,10 +107,11 @@
 
             <tr>
                 <td>
-                    select Class :
+                    Select Class :
                 </td>
                 <td>
-                    <select name="uclass" id="">
+                    <select name="uclass" id="" required>
+                        <option value="" disabled selected value>Select</option>
                         <option value="it">IT</option>
                         <option value="mca">MCA</option>
                         <option value="bca">BCA</option>
@@ -117,10 +121,11 @@
             </tr>
             <tr>
                 <td>
-                    select Sem :
+                    Select Sem :
                 </td>
                 <td>
-                    <select name="usem" id="">
+                    <select name="usem" id="" required>
+                        <option value="" disabled selected value>Select</option>
                         <option value="sem1">Sem-1</option>
                         <option value="sem2">Sem-2</option>
                         <option value="sem3">Sem-3</option>

@@ -14,13 +14,6 @@ public class Data extends HttpServlet
         res.setContentType("text/html;charset=UTF-8");
         PrintWriter out = res.getWriter();
         { 
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet RegisterServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-        
             String name =req.getParameter("uname");
             String gender =req.getParameter("ugender");
             String mobile =req.getParameter("umobile");
@@ -44,15 +37,10 @@ public class Data extends HttpServlet
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/jaydip","root","");
                     out.println("<h1>success<h1>");
-//                    out.println("<h1><a href='Fatch'>SHOW RECORD</a><h1>");
-                    
-                    
-                    
+                   
                     String sql= "INSERT INTO se values(?,?,?,?,?,?,?,?)";
                     PreparedStatement st= con.prepareStatement(sql);
-                    
-                    
-                    
+     
                     st.setString(1,name);
                     st.setString(2,gender);
                     st.setString(3,mobile);
@@ -65,22 +53,13 @@ public class Data extends HttpServlet
                     st.executeUpdate();
                    
                     out.println("<script>alert('Recored is inserted')</script>");
-                    
-//                    st=con.prepareStatement("Select * from se");
-//                    st.executeUpdate();
-//                    ResultSet rs=st.executeQuery();
-//                    while(rs.next())
-//                    {
-//                        System.out.println(rs.getString(1)+ " "+rs.getString(2));
-//                    }
                     con.close();
                 }   
                 catch(Exception e)
                     {
                        e.printStackTrace();
-                    }            
-//            out.println("</body>");
-//            out.println("</html>");
+                    }    
+              out.println("<h1><a href='index.html'>HOME</a><h1>");
         }
     }
 

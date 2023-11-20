@@ -13,32 +13,42 @@ public class Fatch extends HttpServlet
     {
         res.setContentType("text/html;charset=UTF-8");
         PrintWriter out = res.getWriter();
-        
-        try
         {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("mysql:jdbc://localhost:3306/jp", "root", "");
-        
-        
-            
-            String name =req.getParameter("uname");
-            String gender =req.getParameter("ugender");
-            String mobile =req.getParameter("umobile");
-            String email =req.getParameter("uemail");
-            String aadhar=req.getParameter("uaadhar");
-            String bloodgroup=req.getParameter("ubgroup");
-            String sclass=req.getParameter("uclass");
-            String sem=req.getParameter("usem");
-            
-            out.println("<h2>Name: "+name+"</h2>");
-            out.println("<h2>Gender: "+gender+"</h2>");
-            out.println("<h2>Mobile: "+mobile+"</h2>");
-            out.println("<h2>Email: "+email+"</h2>");
-            out.println("<h2>Aadhar: "+aadhar+"</h2>");
-            out.println("<h2>Bloodgroup: "+bloodgroup+"</h2>");
-            out.println("<h2>Sclass: "+sclass+"</h2>");
-            out.println("<h2>Sem: "+sem+"</h2>");
-            } 
+            try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jaydip", "root", "");
+                
+                PreparedStatement ps=con.prepareStatement("select name,gender,mobile,email,aadhar,bloodgroup,sclass,sem from se");
+                ResultSet rs=ps.executeQuery();
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>name</th>");
+                out.println("<th>gender</th>");
+                out.println("<th>mobile</th>");
+                out.println("<th>email</th>");
+                out.println("<th>aadhar</th>");
+                out.println("<th>bloodgroup</th>");
+                out.println("<th>class</th>");
+                out.println("<th>sem</th>");
+                out.println("<tr>");
+                
+                while(rs.next())
+                {
+                    out.println("<tr>");
+                    out.println("<td>"+rs.getString(1)+"</td>");
+                    out.println("<td>"+rs.getString(2)+"</td>");
+                    out.println("<td>"+rs.getString(3)+"</td>");
+                    out.println("<td>"+rs.getString(4)+"</td>");
+                    out.println("<td>"+rs.getString(5)+"</td>");
+                    out.println("<td>"+rs.getString(6)+"</td>");
+                    out.println("<td>"+rs.getString(7)+"</td>");
+                    out.println("<td>"+rs.getString(8)+"</td>");  
+                    out.println("</tr>");
+                }
+                out.println("</table>");
+                out.println("<h1><a href='index.html'>HOME</a><h1>");
+            }
             catch(Exception e)
             {
                 e.printStackTrace();
