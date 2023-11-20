@@ -13,8 +13,13 @@ public class Fatch extends HttpServlet
     {
         res.setContentType("text/html;charset=UTF-8");
         PrintWriter out = res.getWriter();
+        
+        try
         {
-//            Connection con=null;
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("mysql:jdbc://localhost:3306/jp", "root", "");
+        
+        
             
             String name =req.getParameter("uname");
             String gender =req.getParameter("ugender");
@@ -25,10 +30,6 @@ public class Fatch extends HttpServlet
             String sclass=req.getParameter("uclass");
             String sem=req.getParameter("usem");
             
-            
-            
-            
-            
             out.println("<h2>Name: "+name+"</h2>");
             out.println("<h2>Gender: "+gender+"</h2>");
             out.println("<h2>Mobile: "+mobile+"</h2>");
@@ -37,21 +38,11 @@ public class Fatch extends HttpServlet
             out.println("<h2>Bloodgroup: "+bloodgroup+"</h2>");
             out.println("<h2>Sclass: "+sclass+"</h2>");
             out.println("<h2>Sem: "+sem+"</h2>");
-//            try
-//            {
-//                PreparedStatement ps =con.prepareStatement("select * from se");
-//                ps.executeUpdate();
-//                ResultSet rs=ps.executeQuery();
-//                
-//                while(rs.next())
-//                        {
-//                            System.out.println(rs.getString(1)+rs.getString(2));
-//                        }
-//            } 
-//            catch(Exception e)
-//            {
-//                e.printStackTrace();
-//            }
+            } 
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 
