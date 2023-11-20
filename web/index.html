@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* div{
+           
+            background: #dca4e7;
+            border: 2px solid black;
+            color: rgb(0, 0, 0);
+        } */
+
+        h1{
+            background-color:bisque;
+            border: 2px solid blue;
+            text-align: center;
+        }
+        table{
+            background-color:skyblue;
+            border-spacing: 1ch;
+            border: 2px solid rgb(236, 168, 168);
+            margin: auto;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <form action="Data" method="post">
+    <div>
+        <table>
+            <tr>  
+                <td colspan="2">
+                    <h1>Registration Form</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name:
+                <td>
+                    <input type="text" name="uname" placeholder="Enter Name ">
+                
+                </td>
+            </tr>
+        
+
+            <tr>
+                <td>
+                    Gender :
+                </td>
+                <td>
+                    <input type="radio" name="ugender" value="male">Male &nbsp; &nbsp;
+                        <input type="radio" name="ugender" value="female"> Female
+                </td>
+            </tr>
+
+            <tr>
+                
+                <td>
+            
+                Mobile No:
+                </td>
+                <td>
+                    <input type="number" name="umobile" placeholder="Enter here">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input type="email" name="uemail" placeholder="Enter your Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Aadhar No:
+                </td>
+                <td>
+                    <input type="number" name="uaadhar">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select Blood Group:
+                </td>
+                <td>
+                    <select name="ubgroup" id="">
+                        <option value="a+">A+</option>
+                        <option value="b+">B+</option>
+                        <option value="a-">A-</option>
+                        <option value="b-">B-</option>
+                        <option value="ab+">AB+</option>
+                        <option value="ab-">AB-</option>
+                        <option value="o+">O+</option>
+                        <option value="o-">O-</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    select Class :
+                </td>
+                <td>
+                    <select name="uclass" id="">
+                        <option value="it">IT</option>
+                        <option value="mca">MCA</option>
+                        <option value="bca">BCA</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    select Sem :
+                </td>
+                <td>
+                    <select name="usem" id="">
+                        <option value="sem1">Sem-1</option>
+                        <option value="sem2">Sem-2</option>
+                        <option value="sem3">Sem-3</option>
+                        <option value="sem4">Sem-4</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>    
+
+</body>
+</html>
